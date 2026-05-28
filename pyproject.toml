@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "deepneurobold"
+version = "0.1.0"
+description = "BOLD fMRI-based tumor infiltration mapping using supervised learning"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [
+  { name = "Natalia Cantavella Franch", email = "" },
+]
+keywords = ["fMRI", "BOLD", "tumor", "glioblastoma", "infiltration", "neuroimaging", "machine-learning"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+]
+
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.11",
+  "scikit-learn>=1.3",
+  "nibabel>=5.0",
+  "pandas>=2.0",
+  "matplotlib>=3.7",
+  "torch>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff", "mypy"]
+
+[project.scripts]
+deepneurobold = "run.run_experiment:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["deepneurobold*", "run*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.mypy]
+python_version = "3.9"
+ignore_missing_imports = true

@@ -1,0 +1,92 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+tumor_env/
+
+# Patient data (GDPR / patient confidentiality)
+*.nii
+*.nii.gz
+*.dcm
+*.DICOM
+*.mat
+*.npy
+*.npz
+*.h5
+Patient_*/
+patients/
+data/raw/
+data/processed/
+compare_segmentation/
+*.csv
+!pyproject.toml
+
+# Outputs & logs
+outputs/
+results/
+trials/
+runs/
+follow_up_*/
+*.log
+*.txt
+!README.md
+!requirements*.txt
+!LICENSE*
+
+# Local helper folders that should never be pushed
+deepneuroboldv2_figures_raw/
+oncohabitats_upload/
+synthseg/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SLURM
+slurm-*.out
+*.err
+
+# Environment (never commit real values)
+.env
+!.env.example
+
+# Site-specific config (surgery dates, patient identifiers, etc.)
+surgery_dates.csv
+*_patient_dates.csv
+
+# Repo hygiene tooling output
+AUDIT_REPORT.txt
+
+# Trial-specific scripts and docs — kept locally / on the compute cluster
+# but not published to the public repository
+*trial*
+*Trial*
+
+# One-off / experiment-specific scripts (kept locally, not published)
+run/apply_csf_mask_to_prob_maps.py
+run/brats_inference_only.*
+run/run_brats_postop.py
+run/build_*_report*
+run/fig_*.py
+run/generate_paper_figures.py
+run/pick_followup_timepoints.py
+run/run_bold_quality*.py
+run/run_followup_progression.py
+run/run_hotspot_phenotyping.py
+run/run_full_v2.sh
+run/run_pre_v2_*.sh
+run/slurm/run_preprocessing.sh
